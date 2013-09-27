@@ -18,21 +18,11 @@
 #}
 
 {% extends "page.html" %}
-{% set title = _("New Tag") %}
+{% set title = _("Your Tags") %}
 {% set personalize_selected = True %}
-{% from "_formhelpers.html" import render_field with context %}
 
 {% block body %}
-bleeee
-  <div class="row-fluid">
-    <form name="new_tag" action="{{ url_for('.create') }}" method="post" class="form-vertical">
-      {{ form.csrf_token }}
-      {{ render_field(form.name) }}
-      <input type="submit" class="btn btn-primary" value="{{ _('Save') }}" />
-    </form>
-  </div>
-{% endblock %}
-
-{% block javacript %}
-  {{ super() }}
-{% endblock %}
+<div class="well">
+  {{ tag_list|safe }}
+</div>
+{% endblock body %}

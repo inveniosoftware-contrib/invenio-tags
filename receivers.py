@@ -1,4 +1,5 @@
-{#
+# -*- coding: utf-8 -*-
+##
 ## This file is part of Invenio.
 ## Copyright (C) 2013 CERN.
 ##
@@ -15,24 +16,5 @@
 ## You should have received a copy of the GNU General Public License
 ## along with Invenio; if not, write to the Free Software Foundation, Inc.,
 ## 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
-#}
 
-{% extends "page.html" %}
-{% set title = _("New Tag") %}
-{% set personalize_selected = True %}
-{% from "_formhelpers.html" import render_field with context %}
-
-{% block body %}
-bleeee
-  <div class="row-fluid">
-    <form name="new_tag" action="{{ url_for('.create') }}" method="post" class="form-vertical">
-      {{ form.csrf_token }}
-      {{ render_field(form.name) }}
-      <input type="submit" class="btn btn-primary" value="{{ _('Save') }}" />
-    </form>
-  </div>
-{% endblock %}
-
-{% block javacript %}
-  {{ super() }}
-{% endblock %}
+"""WebTag Flask Signal Receivers"""

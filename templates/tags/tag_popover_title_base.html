@@ -17,22 +17,9 @@
 ## 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
 #}
 
-{% extends "page.html" %}
-{% set title = _("New Tag") %}
-{% set personalize_selected = True %}
-{% from "_formhelpers.html" import render_field with context %}
+{{ tag.group_name }}.<b>{{ tag.name }}</b>
 
-{% block body %}
-bleeee
-  <div class="row-fluid">
-    <form name="new_tag" action="{{ url_for('.create') }}" method="post" class="form-vertical">
-      {{ form.csrf_token }}
-      {{ render_field(form.name) }}
-      <input type="submit" class="btn btn-primary" value="{{ _('Save') }}" />
-    </form>
-  </div>
-{% endblock %}
-
-{% block javacript %}
-  {{ super() }}
-{% endblock %}
+<a href="{{ url_for('search.search', p='tag:"' + tag.name) + '"' }}"
+    class="btn btn-link">
+    {{ _('(browse tagged records)') }}
+</a>
