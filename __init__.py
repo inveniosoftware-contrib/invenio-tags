@@ -1,3 +1,5 @@
+#!@PYTHON@
+##
 ## This file is part of Invenio.
 ## Copyright (C) 2013 CERN.
 ##
@@ -15,22 +17,17 @@
 ## along with Invenio; if not, write to the Free Software Foundation, Inc.,
 ## 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
 
-templatesdir = $(sysconfdir)/templates
-templates_DATA = webtag_display.html \
-                 webtag_display_base.html \
-                 webtag_display_cloud.html \
-                 webtag_display_cloud_base.html \
-                 webtag_display_list.html \
-                 webtag_display_list_base.html \
-                 webtag_create.html \
-                 webtag_create_base.html \
-                 webtag_editor.html \
-                 webtag_editor_base.html \
-                 webtag_record.html \
-                 webtag_record_base.html \
-                 webtag_user_settings.html \
-                 webtag_user_settings_base.html
+"""
+Invenio configuration CLI-ng tool.
+"""
 
-EXTRA_DIST = $(templates_DATA)
+__revision__ = "$Id$"
 
-CLEANFILES = *~ *.tmp
+try:
+    from invenio.inveniomanage import main
+except ImportError, e:
+    print "Error: %s" % e
+    import sys
+    sys.exit(1)
+
+main()
