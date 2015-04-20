@@ -181,7 +181,7 @@ class WtgTAG(db.Model, Serializable):
     # to "keyword" attribute
     records = association_proxy('records_association', 'bibrec')
 
-    #Calculated fields
+    # Calculated fields
     @db.hybrid_property
     def record_count(self):
         """TODO."""

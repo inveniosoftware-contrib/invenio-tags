@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+#
 # This file is part of CDS Invenio.
 # Copyright (C) 2013, 2015 CERN.
 #
@@ -37,8 +38,8 @@ C{select floor((767 - sum(
  where table_name = 'tagTAG' and
        column_name in ('id_bibrec', 'id_user')
 ;}
-Using utf8_bin collation to treat tags as case and umlaut sensitive. I.e., treat
-'uber', 'über', 'Über' and 'UBER' as four different tags."""
+Using utf8_bin collation to treat tags as case and umlaut sensitive. I.e.,
+treat 'uber', 'über', 'Über' and 'UBER' as four different tags."""
 
 #
 # Tag Names

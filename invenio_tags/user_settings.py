@@ -74,7 +74,7 @@ class WebTagSettings(Settings):
     @property
     def is_authorized(self):
         return current_user.is_authenticated()
-               # and current_user.is_authorized('usebaskets')
+        # and current_user.is_authorized('usebaskets')
 
 # Compulsory plugin interface
 settings = WebTagSettings

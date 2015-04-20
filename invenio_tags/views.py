@@ -91,7 +91,7 @@ def display_cloud():
             float(max_size - min_size) * \
             float(tag.record_count - min_count) / difference
 
-        tag.css_size = str(size*100)
+        tag.css_size = str(size * 100)
 
     return dict(user_tags=tags,
                 display_mode='cloud')

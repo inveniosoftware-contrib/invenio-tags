@@ -59,11 +59,13 @@ def template_context_function(id_bibrec, id_user):
 
         # Group tags
         if user_settings.get('display_tags_group', True):
-            group_results = db.session.query(WtgTAG, WtgTAGRecord.annotation, Usergroup.name)\
-                .join(UserUsergroup, UserUsergroup.id_user == id_user)\
+            group_results = db.session.query(
+                WtgTAG, WtgTAGRecord.annotation, Usergroup.name
+            ).join(UserUsergroup, UserUsergroup.id_user == id_user)\
                 .filter(WtgTAG.id == WtgTAGRecord.id_tag)\
                 .filter(WtgTAGRecord.id_bibrec == id_bibrec)\
-                .filter(WtgTAG.group_access_rights >= WtgTAG.ACCESS_LEVELS['View'])\
+                .filter(WtgTAG.group_access_rights >=
+                        WtgTAG.ACCESS_LEVELS['View'])\
                 .filter(WtgTAG.id_usergroup == Usergroup.id)\
                 .filter(WtgTAG.id_user != id_user)\
                 .filter(Usergroup.id == UserUsergroup.id_usergroup)\
@@ -74,7 +76,7 @@ def template_context_function(id_bibrec, id_user):
                 query_results.append((tag, annotation))
 
         # Public tags
-        #if user_settings.get('display_tags_public', True):
+        # if user_settings.get('display_tags_public', True):
 
         tag_infos = []
 

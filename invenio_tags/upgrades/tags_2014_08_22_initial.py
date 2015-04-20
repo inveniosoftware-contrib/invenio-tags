@@ -35,12 +35,18 @@ def do_upgrade():
         op.create_table(
             'wtgTAG',
             sa.Column('id', mysql.INTEGER(display_width=15), nullable=False),
-            sa.Column('name', sa.String(length=255), server_default='', nullable=False, index=True),
-            sa.Column('id_user', mysql.INTEGER(display_width=15), server_default='0', nullable=True),
-            sa.Column('user_access_rights', mysql.INTEGER(display_width=2), nullable=False),
-            sa.Column('id_usergroup', mysql.INTEGER(display_width=15), server_default='0', nullable=True),
-            sa.Column('group_access_rights', mysql.INTEGER(display_width=2), nullable=False),
-            sa.Column('public_access_rights', mysql.INTEGER(display_width=2), nullable=False),
+            sa.Column('name', sa.String(length=255),
+                      server_default='', nullable=False, index=True),
+            sa.Column('id_user', mysql.INTEGER(display_width=15),
+                      server_default='0', nullable=True),
+            sa.Column('user_access_rights', mysql.INTEGER(
+                display_width=2), nullable=False),
+            sa.Column('id_usergroup', mysql.INTEGER(
+                display_width=15), server_default='0', nullable=True),
+            sa.Column('group_access_rights', mysql.INTEGER(
+                display_width=2), nullable=False),
+            sa.Column('public_access_rights', mysql.INTEGER(
+                display_width=2), nullable=False),
             sa.Column('show_in_description', sa.Boolean(), nullable=False),
             sa.ForeignKeyConstraint(['id_user'], ['user.id'], ),
             sa.ForeignKeyConstraint(['id_usergroup'], ['usergroup.id'], ),
@@ -54,9 +60,12 @@ def do_upgrade():
     if not op.has_table("wtgTAG_bibrec"):
         op.create_table(
             'wtgTAG_bibrec',
-            sa.Column('id_tag', mysql.INTEGER(display_width=15), nullable=False),
-            sa.Column('id_bibrec', mysql.INTEGER(display_width=15), nullable=False),
-            sa.Column('annotation', sa.Text(convert_unicode=True), nullable=True),
+            sa.Column(
+                'id_tag', mysql.INTEGER(display_width=15), nullable=False),
+            sa.Column(
+                'id_bibrec', mysql.INTEGER(display_width=15), nullable=False),
+            sa.Column(
+                'annotation', sa.Text(convert_unicode=True), nullable=True),
             sa.Column('date_added', sa.DateTime(), nullable=True),
             sa.ForeignKeyConstraint(['id_bibrec'], ['bibrec.id'], ),
             sa.ForeignKeyConstraint(['id_tag'], ['wtgTAG.id'], ),
