@@ -19,22 +19,21 @@
 
 """WebTag database models."""
 
+import re
+
+from datetime import date, datetime
+
 from six import iteritems
 
-# Database
+from invenio.base.globals import cfg
 from invenio.ext.sqlalchemy import db
+from invenio.modules.accounts.models import User, Usergroup
+from invenio.modules.records.models import Record as Bibrec
+from invenio.utils.text import wash_for_xml
+
 from sqlalchemy.ext.associationproxy import association_proxy
 
-# Related models
-from invenio.modules.records.models import Record as Bibrec
-from invenio.modules.accounts.models import User, Usergroup
-
-# Functions
-from invenio.base.globals import cfg
 from werkzeug import cached_property
-from invenio.utils.text import wash_for_xml
-from datetime import datetime, date
-import re
 
 
 class Serializable(object):
@@ -134,7 +133,7 @@ class WtgTAG(db.Model, Serializable):
     # Owner
     id_user = db.Column(db.Integer(15, unsigned=True),
                         db.ForeignKey(User.id),
-                        server_default='0')
+                        nullable=True)
 
     # Access rights of owner
     user_access_rights = db.Column(db.Integer(2, unsigned=True),
@@ -142,11 +141,11 @@ class WtgTAG(db.Model, Serializable):
                                    default=ACCESS_OWNER_DEFAULT)
 
     # Group
-    # equal to 0 for private tags
+    # equal to NULL for private tags
     id_usergroup = db.Column(
         db.Integer(15, unsigned=True),
         db.ForeignKey(Usergroup.id),
-        server_default='0')
+        nullable=True)
 
     # Group access rights
     group_access_rights = db.Column(

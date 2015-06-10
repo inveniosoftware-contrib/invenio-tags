@@ -23,7 +23,6 @@ from __future__ import print_function, unicode_literals
 
 from collections import OrderedDict
 from datetime import datetime
-from dateutil.tz import tzutc
 
 from invenio.base.wrappers import lazy_import
 from invenio.ext.restful import validation_errors
@@ -40,6 +39,7 @@ class TestTagsRestfulAPI(APITestCase):
 
     @property
     def config(self):
+        """Config."""
         cfg = super(TestTagsRestfulAPI, self).config
         cfg['PACKAGES'] = [
             'invenio.base',
@@ -66,13 +66,8 @@ class TestTagsRestfulAPI(APITestCase):
 
     def tearDown(self):
         """Run after every test."""
-        from invenio.modules.accounts.models import User
-
         self.remove_oauth_token()
-        User.query.filter(User.nickname.in_([
-            self.user_a.nickname,
-        ])).delete(synchronize_session=False)
-        db.session.commit()
+        self.delete_objects([self.user_a])
 
     def test_405_methods_tagslistresource(self):
         """Test methods that return 405."""
@@ -514,7 +509,7 @@ class TestTagsRestfulAPI(APITestCase):
                 sorted(tag_representation.items(), key=lambda t: t[0])
             )
             ordered_created_tags.append(ordered_tag_repr)
-        #now query DB
+        # now query DB
         get_answer = self.get(
             'recordlisttagresource',
             user_id=self.user_a.id,
