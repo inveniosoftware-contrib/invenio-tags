@@ -21,15 +21,10 @@
 
 from __future__ import unicode_literals
 
+from invenio.modules.search.bundles import js as _js
 from invenio.base.bundles import styles as _css
-from invenio.ext.assets import Bundle
 
 
 _css.contents.append("css/tags/popover.css")
 
-js = Bundle(
-    "js/tags/record_editor.js",
-    output="tags.js",
-    weight=20,
-    filters="uglifyjs"  # beautify couldn't do anything here ;-)
-)
+_js.contents.append("js/tags/record_editor.js")
