@@ -77,7 +77,7 @@ with open(os.path.join("invenio_tags", "version.py"), "rt") as fp:
     version = g["__version__"]
 
 setup(
-    name='Invenio Tags',
+    name='invenio-tags',
     version=version,
     description=__doc__,
     long_description=readme + '\n\n' + history,
