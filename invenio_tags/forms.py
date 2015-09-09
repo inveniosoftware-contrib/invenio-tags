@@ -29,6 +29,7 @@ from invenio.utils.forms import InvenioBaseForm
 from invenio_groups.models import Group, Membership
 
 from invenio_records.models import Record
+from invenio_records.access import check_user_can_view_record
 
 from wtforms import BooleanField, HiddenField, IntegerField, SelectField, \
     SelectMultipleField, StringField, validators
@@ -126,8 +127,6 @@ def validate_bibrec_exists(dummy_form, field):
 def validate_user_can_see_bibrec(dummy_form, field):
     """Check if user has rights to view bibrec."""
     if field.data:
-        from invenio.legacy.search_engine import check_user_can_view_record
-
         (auth_code, msg) = check_user_can_view_record(current_user, field.data)
 
         if auth_code > 0:

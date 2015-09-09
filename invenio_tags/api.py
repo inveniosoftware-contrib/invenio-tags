@@ -28,6 +28,8 @@ from invenio.ext.sqlalchemy import db
 
 from invenio_groups.models import Group
 
+from invenio_records.models import Record
+
 from sqlalchemy.exc import DBAPIError
 
 from . import errors as tags_errors
@@ -217,10 +219,11 @@ def attach_tag_to_record(uid, tag_name, record_id):
     :param tag_name: name of tag to be attached to record
     :param record_id: record identifier
     """
-    from invenio.legacy.search_engine import record_exists
     if not uid:
         uid = current_user.get_id()
-    if record_exists(record_id) != 1:
+    if not db.session.query(
+        Record.query.filter_by(id=record_id).exists()
+    ).scalar():
         raise tags_errors.RecordNotFoundError(
             "Tag error: Record with id={0} does not exist".
             format(record_id))
@@ -280,9 +283,10 @@ def attach_tags_to_record(uid, list_of_tags, record_id):
     :param list_of_tags: a list of tags to be attached to a record
     :param record_id: record identifier
     """
-    from invenio.legacy.search_engine import record_exists
     # find record
-    if record_exists(record_id) != 1:
+    if not db.session.query(
+        Record.query.filter_by(id=record_id).exists()
+    ).scalar():
         raise tags_errors.RecordNotFoundError(
             "Tag error: Record with id={0} does not exist".
             format(record_id))
@@ -306,11 +310,12 @@ def detach_tag_from_record(uid, tag_name, record_id):
     :param uid: user identifier
     :param record_id: record identifier
     """
-    from invenio.legacy.search_engine import record_exists
     if not uid:
         uid = current_user.get_id()
     # find record
-    if record_exists(record_id) != 1:
+    if not db.session.query(
+        Record.query.filter_by(id=record_id).exists()
+    ).scalar():
         raise tags_errors.RecordNotFoundError(
             "Tag error: Record with id={0} does not exist".
             format(record_id))
@@ -349,9 +354,10 @@ def get_attached_tags_on_record(record_id):
 
     :param record_id: record identifier
     """
-    from invenio.legacy.search_engine import record_exists
     # find record
-    if record_exists(record_id) != 1:
+    if not db.session.query(
+        Record.query.filter_by(id=record_id).exists()
+    ).scalar():
         raise tags_errors.RecordNotFoundError(
             "Tag error: Record with id={0} does not exist".
             format(record_id))
