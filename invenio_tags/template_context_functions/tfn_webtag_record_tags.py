@@ -19,18 +19,15 @@
 
 """WebTag List of tags in document view."""
 
-# Flask
-from invenio.ext.template import render_template_to_string
 from invenio.base.globals import cfg
 from invenio.ext.sqlalchemy import db
+from invenio.ext.template import render_template_to_string
 
-# Models
-from invenio_tags.models import \
-    WtgTAG, \
-    WtgTAGRecord
+from invenio_accounts.models import User
 
-# Related models
-from invenio.modules.accounts.models import User, Usergroup, UserUsergroup
+from invenio_groups.models import Group, Membership
+
+from invenio_tags.models import WtgTAG, WtgTAGRecord
 
 
 def template_context_function(id_bibrec, id_user):
@@ -60,15 +57,15 @@ def template_context_function(id_bibrec, id_user):
         # Group tags
         if user_settings.get('display_tags_group', True):
             group_results = db.session.query(
-                WtgTAG, WtgTAGRecord.annotation, Usergroup.name
-            ).join(UserUsergroup, UserUsergroup.id_user == id_user)\
+                WtgTAG, WtgTAGRecord.annotation, Group.name
+            ).join(Membership, Membership.id_user == id_user)\
                 .filter(WtgTAG.id == WtgTAGRecord.id_tag)\
                 .filter(WtgTAGRecord.id_bibrec == id_bibrec)\
                 .filter(WtgTAG.group_access_rights >=
                         WtgTAG.ACCESS_LEVELS['View'])\
-                .filter(WtgTAG.id_usergroup == Usergroup.id)\
+                .filter(WtgTAG.id_usergroup == Group.id)\
                 .filter(WtgTAG.id_user != id_user)\
-                .filter(Usergroup.id == UserUsergroup.id_usergroup)\
+                .filter(Group.id == Membership.id_usergroup)\
                 .all()
 
             for (tag, annotation, group_name) in group_results:
@@ -119,3 +116,4 @@ def template_context_function(id_bibrec, id_user):
             id_bibrec=id_bibrec)
     else:
         return ''
+

@@ -24,9 +24,10 @@ from flask_login import current_user
 from invenio.base.globals import cfg
 from invenio.base.i18n import _
 from invenio.ext.sqlalchemy import db
-from invenio.modules.accounts.models import UserUsergroup, Usergroup
 from invenio.modules.records.models import Record as Bibrec
 from invenio.utils.forms import InvenioBaseForm
+
+from invenio_groups.models import Group, Membership
 
 from wtforms import BooleanField, HiddenField, IntegerField, SelectField, \
     SelectMultipleField, StringField, validators
@@ -246,9 +247,9 @@ class GetGroupOptions(object):
 
         options = [('0', _('Private'))]
 
-        options += db.session.query(Usergroup.id, Usergroup.name)\
-            .join(UserUsergroup)\
-            .filter(UserUsergroup.id_user == id_user)\
+        options += db.session.query(Group.id, Group.name)\
+            .join(Membership)\
+            .filter(Membership.id_user == id_user)\
             .all()
 
         for (gid, name) in options:

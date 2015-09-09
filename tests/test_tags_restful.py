@@ -44,14 +44,15 @@ class TestTagsRestfulAPI(APITestCase):
         cfg['PACKAGES'] = [
             'invenio.base',
             'invenio.modules.oauth2server',
-            'invenio.modules.accounts',
+            'invenio_accounts',
+            'invenio_groups',
             'invenio_tags',
         ]
         return cfg
 
     def setUp(self):
         """Run before each test."""
-        from invenio.modules.accounts.models import User
+        from invenio_accounts.models import User
 
         self.user_a = User(email='user_a@example.com', nickname='user_a')
         self.user_a.password = "iamusera"

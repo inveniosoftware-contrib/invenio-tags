@@ -23,14 +23,16 @@ import re
 
 from datetime import date, datetime
 
-from six import iteritems
-
 from invenio.base.globals import cfg
 from invenio.ext.sqlalchemy import db
-from invenio.modules.accounts.models import User, Usergroup
 from invenio.modules.records.models import Record as Bibrec
 from invenio.utils.text import wash_for_xml
 
+from invenio_accounts.models import User
+
+from invenio_groups.models import Group
+
+from six import iteritems
 from sqlalchemy.ext.associationproxy import association_proxy
 
 from werkzeug import cached_property
@@ -144,7 +146,7 @@ class WtgTAG(db.Model, Serializable):
     # equal to NULL for private tags
     id_usergroup = db.Column(
         db.Integer(15, unsigned=True),
-        db.ForeignKey(Usergroup.id),
+        db.ForeignKey(Group.id),
         nullable=True)
 
     # Group access rights
@@ -173,7 +175,7 @@ class WtgTAG(db.Model, Serializable):
                                                     lazy='dynamic'))
 
     usergroup = db.relationship(
-        Usergroup,
+        Group,
         backref=db.backref('tags', cascade='all'))
 
     # association proxy of "user_keywords" collection

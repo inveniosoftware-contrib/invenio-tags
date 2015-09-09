@@ -17,24 +17,23 @@
 # along with Invenio; if not, write to the Free Software Foundation, Inc.,
 # 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
 
-"""WebTag User Settings"""
+"""WebTag User Settings."""
 
-# Flask
 from flask import url_for
-from invenio.ext.template import render_template_to_string
-from invenio.base.i18n import _
-from flask_login import current_user
-from invenio.modules.dashboard.settings import \
-    Settings, \
-    UserSettingsAttributeStorage
 
-# Related models
-from invenio.modules.accounts.models import User
+from flask_login import current_user
+
+from invenio.base.i18n import _
+from invenio.ext.template import render_template_to_string
+
+from invenio.modules.dashboard.settings import (Settings,
+                                                UserSettingsAttributeStorage)
 from invenio.modules.records.models import Record as Bibrec
 
-# Internal
-from .models import WtgTAG, WtgTAGRecord
+from invenio_accounts.models import User
+
 from .forms import WebTagUserSettingsForm
+from .models import WtgTAG, WtgTAGRecord
 
 
 class WebTagSettings(Settings):

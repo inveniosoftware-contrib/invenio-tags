@@ -57,7 +57,7 @@ install:
   - "inveniomanage config create secret-key"
   - "inveniomanage config set CFG_EMAIL_BACKEND flask_email.backends.console.Mail"
   - "inveniomanage config set CFG_BIBSCHED_PROCESS_USER `whoami`"
-  - "inveniomanage config set PACKAGES ['invenio.base', 'invenio.modules.accounts', 'invenio.modules.records', 'invenio_tags']"
+  - "inveniomanage config set PACKAGES ['invenio.base', 'invenio_accounts', 'invenio_groups', 'invenio.modules.records', 'invenio_tags']"
   - "inveniomanage config set CFG_TMPDIR /tmp"
   # - "sudo su -c \"npm update\""
   # - "sudo su -c \"npm install --silent -g bower less clean-css uglify-js requirejs\""
