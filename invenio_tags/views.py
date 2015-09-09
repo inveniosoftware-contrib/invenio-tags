@@ -35,11 +35,12 @@ from invenio.base.globals import cfg
 from invenio.base.i18n import _
 from invenio.ext.sqlalchemy import db
 from invenio.modules.collections.models import Collection
-from invenio.modules.search.views.search import response_formated_records
 
 from invenio_accounts.models import User
 
 from invenio_records.models import Record
+
+from invenio_search.views.search import response_formated_records
 
 from werkzeug import LocalProxy
 

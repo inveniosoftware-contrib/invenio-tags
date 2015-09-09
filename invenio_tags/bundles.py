@@ -21,9 +21,9 @@
 
 from __future__ import unicode_literals
 
-from invenio.modules.search.bundles import js as _js
 from invenio.base.bundles import styles as _css
 
+from invenio_search.bundles import js as _js
 
 _css.contents.append("css/tags/popover.css")
 
