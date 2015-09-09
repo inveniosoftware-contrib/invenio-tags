@@ -34,9 +34,10 @@ from invenio.base.decorators import templated, wash_arguments
 from invenio.base.globals import cfg
 from invenio.base.i18n import _
 from invenio.ext.sqlalchemy import db
-from invenio.modules.collections.models import Collection
 
 from invenio_accounts.models import User
+
+from invenio_collections.models import Collection
 
 from invenio_records.models import Record
 
