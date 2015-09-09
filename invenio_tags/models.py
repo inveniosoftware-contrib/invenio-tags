@@ -25,12 +25,13 @@ from datetime import date, datetime
 
 from invenio.base.globals import cfg
 from invenio.ext.sqlalchemy import db
-from invenio.modules.records.models import Record as Bibrec
 from invenio.utils.text import wash_for_xml
 
 from invenio_accounts.models import User
 
 from invenio_groups.models import Group
+
+from invenio_records.models import Record
 
 from six import iteritems
 from sqlalchemy.ext.associationproxy import association_proxy
@@ -220,9 +221,9 @@ class WtgTAGRecord(db.Model, Serializable):
                        nullable=False,
                        primary_key=True)
 
-    # Bibrec.id
+    # Record.id
     id_bibrec = db.Column(db.Integer(15, unsigned=True),
-                          db.ForeignKey(Bibrec.id),
+                          db.ForeignKey(Record.id),
                           nullable=False,
                           primary_key=True)
 
@@ -245,11 +246,11 @@ class WtgTAGRecord(db.Model, Serializable):
                                                    cascade='all',
                                                    lazy='dynamic'))
 
-    bibrec = db.relationship(Bibrec,
+    bibrec = db.relationship(Record,
                              backref=db.backref('tags_association',
                                                 cascade='all'))
 
-    bibrec_query = db.relationship(Bibrec,
+    bibrec_query = db.relationship(Record,
                                    backref=db.backref('tags_association_query',
                                                       cascade='all',
                                                       lazy='dynamic'))

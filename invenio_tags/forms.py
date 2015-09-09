@@ -24,10 +24,11 @@ from flask_login import current_user
 from invenio.base.globals import cfg
 from invenio.base.i18n import _
 from invenio.ext.sqlalchemy import db
-from invenio.modules.records.models import Record as Bibrec
 from invenio.utils.forms import InvenioBaseForm
 
 from invenio_groups.models import Group, Membership
+
+from invenio_records.models import Record
 
 from wtforms import BooleanField, HiddenField, IntegerField, SelectField, \
     SelectMultipleField, StringField, validators
@@ -105,21 +106,21 @@ def validate_bibrec_exists(dummy_form, field):
             field.data = int(field.data)
         except ValueError:
             raise validators.ValidationError(
-                _('Bibrec ID must be an integer.'))
+                _('Record ID must be an integer.'))
 
-        record = db.session.query(Bibrec).get(field.data)
+        record = db.session.query(Record).get(field.data)
 
         if (not record):
-            raise validators.ValidationError(_('Bibrec does not exist.'))
+            raise validators.ValidationError(_('Record does not exist.'))
 
         # Switch to merged record if present
         merged_id = record.merged_recid_final
         if merged_id != record.id:
-            record = db.session.query(Bibrec).get(merged_id)
+            record = db.session.query(Record).get(merged_id)
             field.data = merged_id
 
         if record.deleted:
-            raise validators.ValidationError(_('Bibrec has been deleted.'))
+            raise validators.ValidationError(_('Record has been deleted.'))
 
 
 def validate_user_can_see_bibrec(dummy_form, field):

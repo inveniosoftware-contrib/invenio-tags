@@ -28,9 +28,9 @@ from invenio.ext.template import render_template_to_string
 
 from invenio.modules.dashboard.settings import (Settings,
                                                 UserSettingsAttributeStorage)
-from invenio.modules.records.models import Record as Bibrec
-
 from invenio_accounts.models import User
+
+from invenio_records.models import Record
 
 from .forms import WebTagUserSettingsForm
 from .models import WtgTAG, WtgTAGRecord
@@ -59,7 +59,7 @@ class WebTagSettings(Settings):
         user = User.query.get(current_user.get_id())
         tag_count = user.tags_query.count()
 
-        record_count = Bibrec.query.join(WtgTAGRecord)\
+        record_count = Record.query.join(WtgTAGRecord)\
             .join(WtgTAG)\
             .filter(WtgTAG.user == user).count()
 

@@ -481,7 +481,7 @@ class TestTagsRestfulAPI(APITestCase):
 
     def test_attach_tags_to_record_pass(self):
         """Successfully attach tags to a record."""
-        from invenio.modules.records.models import Record
+        from invenio_records.models import Record
         # first create a record
         test_record = Record(
             creation_date=datetime.now(),
@@ -535,7 +535,7 @@ class TestTagsRestfulAPI(APITestCase):
 
     def test_detach_tags_from_record_fails(self):
         """Fail to detach tag from record."""
-        from invenio.modules.records.models import Record
+        from invenio_records.models import Record
         # first create a record
         test_record = Record(
             creation_date=datetime.now(),
@@ -588,7 +588,7 @@ class TestTagsRestfulAPI(APITestCase):
 
     def test_detach_tags_from_record_pass(self):
         """Successfully detach tag from record."""
-        from invenio.modules.records.models import Record
+        from invenio_records.models import Record
         # first create a record
         test_record = Record(
             creation_date=datetime.now(),

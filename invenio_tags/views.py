@@ -35,10 +35,11 @@ from invenio.base.globals import cfg
 from invenio.base.i18n import _
 from invenio.ext.sqlalchemy import db
 from invenio.modules.collections.models import Collection
-from invenio.modules.records.models import Record as Bibrec
 from invenio.modules.search.views.search import response_formated_records
 
 from invenio_accounts.models import User
+
+from invenio_records.models import Record
 
 from werkzeug import LocalProxy
 
@@ -242,7 +243,7 @@ def tokenize(id_bibrec, q):
     id_user = current_user.get_id()
 
     # Output only tags unattached to this record
-    record = Bibrec.query.get(id_bibrec)
+    record = Record.query.get(id_bibrec)
 
     tags = WtgTAG.query\
         .filter_by(id_user=id_user)\
@@ -288,7 +289,7 @@ def editor(id_bibrec):
     :param id_bibrec: record identifier
     """
     user = db.session.query(User).get(current_user.get_id())
-    record = db.session.query(Bibrec).get(id_bibrec)
+    record = db.session.query(Record).get(id_bibrec)
 
     tags = db.session.query(WtgTAG)\
         .filter_by(user=user)\
@@ -385,7 +386,7 @@ def create():
         db.session.refresh(new_tag)
 
         if 'id_bibrec' in form.data and form.data['id_bibrec']:
-            record = db.session.query(Bibrec).get(form.data['id_bibrec'])
+            record = db.session.query(Record).get(form.data['id_bibrec'])
             new_tag.records.append(record)
             db.session.add(new_tag)
             response['id_bibrec'] = form.data['id_bibrec']
