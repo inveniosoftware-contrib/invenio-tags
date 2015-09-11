@@ -1,0 +1,15 @@
+-e git+git://github.com/mitsuhiko/werkzeug.git#egg=Werkzeug
+-e git+git://github.com/mitsuhiko/flask.git#egg=flask
+-e git+git://github.com/maxcountryman/flask-login.git#egg=flask-login
+-e git+git://github.com/flask-restful/flask-restful.git#egg=flask-restful
+
+-e git+git://github.com/inveniosoftware/flask-breadcrumbs.git#egg=flask-breadcrumbs
+-e git+git://github.com/inveniosoftware/flask-menu.git#egg=flask-menu
+-e git+git://github.com/inveniosoftware/intbitset.git#egg=intbitset
+-e git+git://github.com/inveniosoftware/invenio-accounts.git#egg=invenio-accounts
+-e git+git://github.com/inveniosoftware/invenio-collections.git#egg=invenio-collections
+-e git+git://github.com/inveniosoftware/invenio-groups.git#egg=invenio-groups
+-e git+git://github.com/inveniosoftware/invenio-oauth2server.git#egg=invenio-oauth2server
+-e git+git://github.com/inveniosoftware/invenio-records.git#egg=invenio-records
+-e git+git://github.com/inveniosoftware/invenio-search.git#egg=invenio-search
+-e git+git://github.com/inveniosoftware/invenio-upgrader.git#egg=invenio-upgrader
