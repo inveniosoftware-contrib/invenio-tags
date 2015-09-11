@@ -43,10 +43,12 @@ class TestTagsRestfulAPI(APITestCase):
         cfg = super(TestTagsRestfulAPI, self).config
         cfg['PACKAGES'] = [
             'invenio.base',
-            'invenio.modules.oauth2server',
             'invenio_accounts',
             'invenio_groups',
+            'invenio_oauth2server',
             'invenio_tags',
+            'invenio_records',
+            'invenio_search',
         ]
         return cfg
 

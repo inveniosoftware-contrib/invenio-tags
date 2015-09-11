@@ -29,17 +29,27 @@ readme = open('README.rst').read()
 history = open('CHANGES.rst').read()
 
 requirements = [
-    'Flask',
-    'six',
+    'Flask>=0.10.1',
+    'flask-breadcrumbs>=0.2',
+    'flask-login>=0.2.7',
+    'flask-menu>=0.2',
+    'flask-restful>=0.2.12',
+    'intbitset>=2.0',
+    'invenio-accounts>=0.1.2',
+    'invenio-groups>=0.1.0',
+    'invenio-oauth2server>=0.1.0',
+    'invenio-records>=0.3.2',
+    'invenio-search>=0.1.3',
     'invenio-upgrader>=0.1.0',
-    'Invenio',
+    'six>=1.7.2',
 ]
 
 test_requirements = [
-    'pytest',
-    'pytest-cov',
-    'pytest-pep8',
-    'coverage',
+    'Flask-Testing>=0.4.2',
+    'coverage>=3.7.1',
+    'pytest>=2.6.1',
+    'pytest-cov>=1.8.0',
+    'pytest-pep8>=1.0.6',
 ]
 
 
@@ -96,8 +106,8 @@ setup(
     install_requires=requirements,
     extras_require={
         'docs': [
-            'Sphinx',
-            'sphinx_rtd_theme'
+            'Sphinx>=1.3',
+            'sphinx_rtd_theme>=0.1.7'
         ],
     },
     classifiers=[
