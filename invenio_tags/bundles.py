@@ -21,7 +21,7 @@
 
 from __future__ import unicode_literals
 
-from invenio.base.bundles import styles as _css
+from invenio_base.bundles import styles as _css
 
 from invenio_search.bundles import js as _js
 

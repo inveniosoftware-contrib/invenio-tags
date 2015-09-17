@@ -23,7 +23,7 @@ import re
 
 from datetime import date, datetime
 
-from invenio.base.globals import cfg
+from invenio_base.globals import cfg
 from invenio.ext.sqlalchemy import db
 from invenio.utils.text import wash_for_xml
 
@@ -222,7 +222,7 @@ class WtgTAGRecord(db.Model, Serializable):
                        primary_key=True)
 
     # Record.id
-    id_bibrec = db.Column(db.Integer(15, unsigned=True),
+    id_bibrec = db.Column(db.MediumInteger(8, unsigned=True),
                           db.ForeignKey(Record.id),
                           nullable=False,
                           primary_key=True)

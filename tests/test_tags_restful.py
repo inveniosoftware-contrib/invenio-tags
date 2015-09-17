@@ -24,7 +24,7 @@ from __future__ import print_function, unicode_literals
 from collections import OrderedDict
 from datetime import datetime
 
-from invenio.base.wrappers import lazy_import
+from invenio_base.wrappers import lazy_import
 from invenio.ext.restful import validation_errors
 from invenio.ext.restful.utils import APITestCase
 from invenio.testsuite import make_test_suite, run_test_suite
@@ -42,13 +42,13 @@ class TestTagsRestfulAPI(APITestCase):
         """Config."""
         cfg = super(TestTagsRestfulAPI, self).config
         cfg['PACKAGES'] = [
-            'invenio.base',
             'invenio_accounts',
             'invenio_groups',
             'invenio_oauth2server',
             'invenio_tags',
             'invenio_records',
             'invenio_search',
+            'invenio_base',
         ]
         return cfg
 

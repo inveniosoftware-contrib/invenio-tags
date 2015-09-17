@@ -21,8 +21,8 @@
 
 from flask_login import current_user
 
-from invenio.base.globals import cfg
-from invenio.base.i18n import _
+from invenio_base.globals import cfg
+from invenio_base.i18n import _
 from invenio.ext.sqlalchemy import db
 from invenio.utils.forms import InvenioBaseForm
 

@@ -109,6 +109,7 @@ setup(
             'Sphinx>=1.3',
             'sphinx_rtd_theme>=0.1.7'
         ],
+        'tests': test_requirements
     },
     classifiers=[
         'Environment :: Web Environment',

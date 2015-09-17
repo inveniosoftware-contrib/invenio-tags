@@ -19,7 +19,7 @@
 
 """WebTag List of tags in document view."""
 
-from invenio.base.globals import cfg
+from invenio_base.globals import cfg
 from invenio.ext.sqlalchemy import db
 from invenio.ext.template import render_template_to_string
 
@@ -116,4 +116,3 @@ def template_context_function(id_bibrec, id_user):
             id_bibrec=id_bibrec)
     else:
         return ''
-

@@ -23,9 +23,9 @@
 def setup(sphinx):
     """Setup Sphinx object."""
     from flask import has_app_context
-    from invenio.base.factory import create_app
-    PACKAGES = ['invenio.base', 'invenio_accounts', 'invenio_groups',
-                'invenio_records', 'invenio_tags']
+    from invenio_base.factory import create_app
+    PACKAGES = ['invenio_accounts', 'invenio_groups',
+                'invenio_records', 'invenio_tags', 'invenio_base']
 
     if not has_app_context():
         app = create_app(PACKAGES=PACKAGES)
