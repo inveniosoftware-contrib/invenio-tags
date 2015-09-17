@@ -1,0 +1,297 @@
+# Translations template for invenio-tags.
+# Copyright (C) 2015 CERN
+# This file is distributed under the same license as the invenio-tags
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: invenio-tags 0.1.0.dev20150420\n"
+"Report-Msgid-Bugs-To: info@invenio-software.org\n"
+"POT-Creation-Date: 2015-09-17 14:40+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.0\n"
+
+#: invenio_tags/forms.py:54
+msgid "Forbidden characters. Try "
+msgstr ""
+
+#: invenio_tags/forms.py:58
+msgid "The name must contain valid characters."
+msgstr ""
+
+#: invenio_tags/forms.py:62
+#, python-format
+msgid "The name cannot exeed %(x_max_len)d characters."
+msgstr ""
+
+#: invenio_tags/forms.py:66
+msgid "Forbidden character."
+msgstr ""
+
+#: invenio_tags/forms.py:78
+msgid "Tag with that name already exists."
+msgstr ""
+
+#: invenio_tags/forms.py:87
+msgid "Tag ID must be an integer."
+msgstr ""
+
+#: invenio_tags/forms.py:90
+msgid "Tag does not exist."
+msgstr ""
+
+#: invenio_tags/forms.py:100
+msgid "You are not the owner of this tag."
+msgstr ""
+
+#: invenio_tags/forms.py:110
+msgid "Record ID must be an integer."
+msgstr ""
+
+#: invenio_tags/forms.py:115
+msgid "Record does not exist."
+msgstr ""
+
+#: invenio_tags/forms.py:124
+msgid "Record has been deleted."
+msgstr ""
+
+#: invenio_tags/forms.py:134
+msgid "Unauthorized to view record: "
+msgstr ""
+
+#: invenio_tags/forms.py:145
+msgid "Tag already attached."
+msgstr ""
+
+#: invenio_tags/forms.py:156
+msgid "Tag not attached."
+msgstr ""
+
+#: invenio_tags/forms.py:163 invenio_tags/forms.py:263
+msgid "Name"
+msgstr ""
+
+#: invenio_tags/forms.py:248
+msgid "Private"
+msgstr ""
+
+#: invenio_tags/forms.py:267
+msgid "Group sharing options"
+msgstr ""
+
+#: invenio_tags/forms.py:271
+msgid "Group access rights"
+msgstr ""
+
+#: invenio_tags/forms.py:283
+msgid "Display tags with records"
+msgstr ""
+
+#: invenio_tags/forms.py:285
+msgid "Show group tags"
+msgstr ""
+
+#: invenio_tags/forms.py:287
+msgid "Show public tags"
+msgstr ""
+
+#: invenio_tags/user_settings.py:54
+msgid "Tags"
+msgstr ""
+
+#: invenio_tags/views.py:69 invenio_tags/views.py:70
+#: invenio_tags/templates/tags/display_base.html:21
+#: invenio_tags/templates/tags/record_tags_test.html:21
+msgid "Your Tags"
+msgstr ""
+
+#: invenio_tags/views.py:109
+msgid "Display as List"
+msgstr ""
+
+#: invenio_tags/views.py:133
+msgid "Associated Records"
+msgstr ""
+
+#: invenio_tags/views.py:137 invenio_tags/views.py:143
+#: invenio_tags/views.py:169
+msgid "Invalid tag id"
+msgstr ""
+
+#: invenio_tags/views.py:147 invenio_tags/views.py:173
+msgid "You are not authorized to view this tag"
+msgstr ""
+
+#: invenio_tags/views.py:151
+msgid "There are no documents tagged with "
+msgstr ""
+
+#: invenio_tags/views.py:162
+msgid "Edit tag"
+msgstr ""
+
+#: invenio_tags/views.py:187
+msgid "Tag Successfully edited."
+msgstr ""
+
+#: invenio_tags/views.py:190
+msgid "Tag name"
+msgstr ""
+
+#: invenio_tags/views.py:191
+msgid "is already in use."
+msgstr ""
+
+#: invenio_tags/views.py:229
+#: invenio_tags/templates/tags/display_list_base.html:26
+msgid "Tag list"
+msgstr ""
+
+#: invenio_tags/views.py:350
+msgid "Successfully deleted tags."
+msgstr ""
+
+#: invenio_tags/views.py:370
+#: invenio_tags/templates/tags/display_list_base.html:85
+msgid "New tag"
+msgstr ""
+
+#: invenio_tags/static/js/tags/record_editor.js:287
+msgid "Create new tag"
+msgstr ""
+
+#: invenio_tags/templates/tags/create_base.html:21
+msgid "New Tag"
+msgstr ""
+
+#: invenio_tags/templates/tags/create_base.html:30
+msgid "Save"
+msgstr ""
+
+#: invenio_tags/templates/tags/display_base.html:28
+msgid "Display mode"
+msgstr ""
+
+#: invenio_tags/templates/tags/display_base.html:37
+msgid "Cloud"
+msgstr ""
+
+#: invenio_tags/templates/tags/display_base.html:45
+msgid "List"
+msgstr ""
+
+#: invenio_tags/templates/tags/display_cloud_base.html:24
+msgid "Tag Cloud"
+msgstr ""
+
+#: invenio_tags/templates/tags/display_list_base.html:35
+msgid "Tag"
+msgstr ""
+
+#: invenio_tags/templates/tags/display_list_base.html:36
+msgid "Documents"
+msgstr ""
+
+#: invenio_tags/templates/tags/display_list_base.html:37
+msgid "Action"
+msgstr ""
+
+#: invenio_tags/templates/tags/display_list_base.html:43
+msgid "Delete Selected"
+msgstr ""
+
+#: invenio_tags/templates/tags/display_list_base.html:51
+msgid "No tags"
+msgstr ""
+
+#: invenio_tags/templates/tags/display_list_base.html:75
+msgid "Delete"
+msgstr ""
+
+#: invenio_tags/templates/tags/record_editor_base.html:30
+msgid "Tags:"
+msgstr ""
+
+#: invenio_tags/templates/tags/record_tags_base.html:43
+#: invenio_tags/templates/tags/record_tags_base.html:60
+msgid "Edit tags"
+msgstr ""
+
+#: invenio_tags/templates/tags/record_tags_base.html:45
+msgid "Add tags"
+msgstr ""
+
+#: invenio_tags/templates/tags/record_tags_base.html:63
+msgid "Loading tags."
+msgstr ""
+
+#: invenio_tags/templates/tags/tag_popover_content_base.html:22
+msgid "You are the owner of this tag."
+msgstr ""
+
+#: invenio_tags/templates/tags/tag_popover_content_base.html:26
+msgid "Edit Tag"
+msgstr ""
+
+#: invenio_tags/templates/tags/tag_popover_content_base.html:35
+#: invenio_tags/templates/tags/tag_popover_content_base.html:40
+msgid "No annotation"
+msgstr ""
+
+#: invenio_tags/templates/tags/tag_popover_content_base.html:36
+#: invenio_tags/templates/tags/tag_popover_content_base.html:42
+msgid "Click to edit annotation"
+msgstr ""
+
+#: invenio_tags/templates/tags/tag_popover_content_base.html:37
+msgid "Saving..."
+msgstr ""
+
+#: invenio_tags/templates/tags/tag_popover_content_base.html:46
+msgid "Done"
+msgstr ""
+
+#: invenio_tags/templates/tags/tag_popover_title_base.html:24
+msgid "(browse tagged records)"
+msgstr ""
+
+#: invenio_tags/templates/tags/user_settings_base.html:22
+msgid "You have"
+msgstr ""
+
+#: invenio_tags/templates/tags/user_settings_base.html:22
+msgid "tags"
+msgstr ""
+
+#: invenio_tags/templates/tags/user_settings_base.html:23
+msgid "associated with"
+msgstr ""
+
+#: invenio_tags/templates/tags/user_settings_base.html:23
+msgid "documents"
+msgstr ""
+
+#: invenio_tags/templates/tags/user_settings_base.html:26
+msgid "View tags as"
+msgstr ""
+
+#: invenio_tags/templates/tags/user_settings_base.html:27
+msgid "cloud"
+msgstr ""
+
+#: invenio_tags/templates/tags/user_settings_base.html:28
+msgid "or"
+msgstr ""
+
+#: invenio_tags/templates/tags/user_settings_base.html:29
+msgid "list"
+msgstr ""
+
