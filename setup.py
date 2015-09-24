@@ -41,6 +41,7 @@ requirements = [
     'invenio-records>=0.3.2',
     'invenio-search>=0.1.3',
     'invenio-upgrader>=0.1.0',
+    'invenio-utils>=0.1.1',
     'six>=1.7.2',
 ]
 
