@@ -33,7 +33,7 @@ from flask_menu import register_menu
 from invenio_base.decorators import templated, wash_arguments
 from invenio_base.globals import cfg
 from invenio_base.i18n import _
-from invenio.ext.sqlalchemy import db
+from invenio_ext.sqlalchemy import db
 
 from invenio_accounts.models import User
 

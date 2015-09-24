@@ -32,6 +32,7 @@
 -e git+git://github.com/inveniosoftware/intbitset.git#egg=intbitset
 -e git+git://github.com/inveniosoftware/invenio-accounts.git#egg=invenio-accounts
 -e git+git://github.com/inveniosoftware/invenio-collections.git#egg=invenio-collections
+-e git+git://github.com/inveniosoftware/invenio-ext.git#egg=invenio-ext
 -e git+git://github.com/inveniosoftware/invenio-groups.git#egg=invenio-groups
 -e git+git://github.com/inveniosoftware/invenio-oauth2server.git#egg=invenio-oauth2server
 -e git+git://github.com/inveniosoftware/invenio-records.git#egg=invenio-records

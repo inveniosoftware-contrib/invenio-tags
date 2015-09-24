@@ -22,7 +22,7 @@
 from flask_login import current_user
 from intbitset import intbitset
 
-from invenio.ext.sqlalchemy import db
+from invenio_ext.sqlalchemy import db
 
 from ...models import WtgTAG, WtgTAGRecord, wash_tag_silent
 

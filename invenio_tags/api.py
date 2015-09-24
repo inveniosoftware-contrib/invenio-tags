@@ -24,7 +24,7 @@ from __future__ import unicode_literals
 
 from flask_login import current_user
 
-from invenio.ext.sqlalchemy import db
+from invenio_ext.sqlalchemy import db
 
 from invenio_groups.models import Group
 

@@ -23,7 +23,7 @@ from flask_login import current_user
 
 from invenio_base.globals import cfg
 from invenio_base.i18n import _
-from invenio.ext.sqlalchemy import db
+from invenio_ext.sqlalchemy import db
 from invenio_utils.forms import InvenioBaseForm
 
 from invenio_groups.models import Group, Membership

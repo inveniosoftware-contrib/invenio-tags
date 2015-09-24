@@ -36,6 +36,7 @@ requirements = [
     'flask-restful>=0.2.12',
     'intbitset>=2.0',
     'invenio-accounts>=0.1.2',
+    'invenio-ext>=0.2.1',
     'invenio-groups>=0.1.0',
     'invenio-oauth2server>=0.1.0',
     'invenio-records>=0.3.2',

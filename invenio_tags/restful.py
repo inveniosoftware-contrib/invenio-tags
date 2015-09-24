@@ -36,7 +36,7 @@ from flask_login import current_user
 
 from flask_restful import Resource, abort, fields, marshal
 
-from invenio.ext.restful import (
+from invenio_ext.restful import (
     RESTValidator, require_api_auth, require_header
 )
 

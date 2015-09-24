@@ -24,7 +24,7 @@ import re
 from datetime import date, datetime
 
 from invenio_base.globals import cfg
-from invenio.ext.sqlalchemy import db
+from invenio_ext.sqlalchemy import db
 from invenio_utils.text import wash_for_xml
 
 from invenio_accounts.models import User

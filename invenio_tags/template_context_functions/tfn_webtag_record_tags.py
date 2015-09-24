@@ -20,8 +20,8 @@
 """WebTag List of tags in document view."""
 
 from invenio_base.globals import cfg
-from invenio.ext.sqlalchemy import db
-from invenio.ext.template import render_template_to_string
+from invenio_ext.sqlalchemy import db
+from invenio_ext.template import render_template_to_string
 
 from invenio_accounts.models import User
 

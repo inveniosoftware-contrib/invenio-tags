@@ -24,7 +24,7 @@ from flask import url_for
 from flask_login import current_user
 
 from invenio_base.i18n import _
-from invenio.ext.template import render_template_to_string
+from invenio_ext.template import render_template_to_string
 
 from invenio.modules.dashboard.settings import (Settings,
                                                 UserSettingsAttributeStorage)
