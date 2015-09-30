@@ -36,6 +36,7 @@ requirements = [
     'flask-restful>=0.2.12',
     'intbitset>=2.0',
     'invenio-accounts>=0.1.2',
+    'invenio-base>=0.1.0',
     'invenio-ext>=0.2.1',
     'invenio-groups>=0.1.0',
     'invenio-oauth2server>=0.1.0',
@@ -52,6 +53,7 @@ test_requirements = [
     'pytest>=2.8.0',
     'pytest-cov>=2.1.0',
     'pytest-pep8>=1.0.6',
+    'invenio-testing>=0.1.1',
 ]
 
 

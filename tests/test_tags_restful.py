@@ -27,7 +27,6 @@ from datetime import datetime
 from invenio_base.wrappers import lazy_import
 from invenio_ext.restful import validation_errors
 from invenio_ext.restful.utils import APITestCase
-from invenio.testsuite import make_test_suite, run_test_suite
 
 
 db = lazy_import('invenio_ext.sqlalchemy.db')
@@ -623,9 +622,3 @@ class TestTagsRestfulAPI(APITestCase):
         # delete record
         db.session.delete(test_record)
         db.session.commit()
-
-
-TEST_SUITE = make_test_suite(TestTagsRestfulAPI)
-
-if __name__ == "__main__":
-    run_test_suite(TEST_SUITE)
