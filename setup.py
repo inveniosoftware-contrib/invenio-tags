@@ -58,9 +58,13 @@ test_requirements = [
 
 
 class PyTest(TestCommand):
+
+    """PyTest Test."""
+
     user_options = [('pytest-args=', 'a', "Arguments to pass to py.test")]
 
     def initialize_options(self):
+        """Init pytest."""
         TestCommand.initialize_options(self)
         self.pytest_args = []
         try:
@@ -72,11 +76,13 @@ class PyTest(TestCommand):
         self.pytest_args = config.get('pytest', 'addopts').split(' ')
 
     def finalize_options(self):
+        """Finalize pytest."""
         TestCommand.finalize_options(self)
         self.test_args = []
         self.test_suite = True
 
     def run_tests(self):
+        """Run tests."""
         # import here, cause outside the eggs aren't loaded
         import pytest
         errno = pytest.main(self.pytest_args)
